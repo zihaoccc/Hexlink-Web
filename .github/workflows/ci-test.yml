@@ -39,12 +39,13 @@ jobs:
         run: node -v
       - run: npm i totp-generator
       - name: Build the project
+        working-directory: frontend
         run: npm run build
       - uses: ./.github/actions/env-cleanup
       - name: Early terminate workflow
         if: ${{ failure() }}
         uses: ./.github/actions/early-terminator
-        
+
   success:
     name: ci-test-success
     runs-on: ubuntu-latest

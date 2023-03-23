@@ -12,3 +12,5 @@ runs:
     - name: Install yarn
       run: npm install --save-dev typescript --force
       shell: bash
+    - name: Install vite
+      run: npm i -g vite
